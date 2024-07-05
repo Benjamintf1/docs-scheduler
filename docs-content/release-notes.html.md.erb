@@ -42,6 +42,7 @@ This topic contains release notes for Scheduler for VMware Tanzu v2.0.
 
 **Release date:** February 23, 2024
 
+* **[Breaking change]** Minor breaking change caused by updating quartz library to adjust cve scanning. Quartz no longer accepts schedules with invalid increments. Increments (eg. */60 <-) can not be larger or equal to the maximum value. Every 60 minutes can be represented by 0. 0/60 is redundant. Any invalid schedules may impact the functioning of scheduler negatively.
 * **[Security fix]** Update dependencies.
 
 ### <a id="2-0-4"></a> v2.0.4
@@ -76,8 +77,8 @@ This topic contains release notes for Scheduler for VMware Tanzu v2.0.
 
 **Release date:** November 7, 2023
 
-- **[Dependency bump]** Update Go to v1.20.7.
-- **[Dependency bump]** Update Spring Boot to v3.1.5.
+* **[Dependency bump]** Update Go to v1.20.7.
+* **[Dependency bump]** Update Spring Boot to v3.1.5.
 
 ## <a id="breaking-changes"></a> Breaking changes in Scheduler v2.0
 
